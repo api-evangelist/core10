@@ -1,0 +1,59 @@
+generated: '2026-08-11'
+method: searched
+source: npm, PyPI and GitHub registry searches for Core10-lineage first-party libraries
+note: >-
+  No first-party client library, SDK or CLI exists for Core10, Monarch or Accrue on any public
+  registry, and no Core10-lineage GitHub organization exists at all. This is consistent: none
+  of the three brands publishes an API, so there is nothing for a client library to talk to.
+  NO `Packages` and NO `SDKs` pointer is emitted in apis.yml — an empty list is a recorded
+  absence, not a published package set.
+packages: []
+searched:
+- registry: npm
+  query: core10
+  url: https://registry.npmjs.org/core10
+  status: 404
+- registry: npm
+  query: monarchfts
+  url: https://registry.npmjs.org/monarchfts
+  status: 404
+- registry: npm
+  query: accrue
+  url: https://registry.npmjs.org/accrue
+  status: 200
+  version: 1.0.1
+  published: null
+  official: false
+  rejected: >-
+    Unrelated. "A jQuery loan calculation plugin" published by GitHub user jpederson from
+    github.com/jpederson/Accrue.js — a name collision with the Accrue banking platform, not a
+    Core10 or Accrue Technologies artifact.
+- registry: pypi
+  query: core10
+  url: https://pypi.org/pypi/core10/json
+  status: 404
+- registry: pypi
+  query: monarchfts
+  url: https://pypi.org/pypi/monarchfts/json
+  status: 404
+- registry: pypi
+  query: accrue
+  url: https://pypi.org/pypi/accrue/json
+  status: 200
+  version: 1.3.0
+  published: null
+  official: false
+  rejected: >-
+    Unrelated. "A composable pipeline engine for structured data enrichment using LLMs" — a
+    name collision, no link to Accrue Technologies or Core10.
+- registry: github
+  query: organizations
+  probes:
+  - {url: 'https://api.github.com/orgs/core10', status: 404}
+  - {url: 'https://api.github.com/orgs/core10io', status: 404}
+  - {url: 'https://api.github.com/orgs/monarchfts', status: 404}
+  - {url: 'https://api.github.com/orgs/accrue-technologies', status: 404}
+x-evidence:
+  fetched: '2026-08-11'
+  registries_probed: [npm, pypi, github]
+  first_party_packages_found: 0

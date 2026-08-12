@@ -1,0 +1,105 @@
+generated: '2026-08-11'
+method: probed
+source: live HTTP probe of every Core10-lineage host
+note: >-
+  No /.well-known/ document was found on any Core10-lineage host. Recorded as an absence,
+  which is valid data. NO `WellKnown` and NO `SecurityTxt` pointer is emitted in apis.yml,
+  because not one path returned a 200 carrying a real document. IMPORTANT: core10.io answers
+  HTTP 200 for EVERY path probed, but the body is byte-identical to the monarchfts.com
+  homepage (126,917 bytes of WordPress HTML) on all of them — a catch-all soft-404, not a
+  served document. Those rows are recorded as `soft_404: true` and treated as misses.
+hosts:
+- host: https://monarchfts.com
+  role: primary website (Core10 successor brand)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://core10.io
+  role: retired Core10 domain, 301 to monarchfts.com
+  soft_404: true
+  documents:
+  - {path: /.well-known/security.txt, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/openid-configuration, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/oauth-authorization-server, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/api-catalog, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/ai-plugin.json, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/agent-card.json, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+  - {path: /.well-known/agent.json, status: 200, soft_404: true, content_type: text/html, bytes: 126917}
+- host: https://blog.core10.io
+  role: Core10 Insights blog (HubSpot)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://getaccrue.com
+  role: Accrue product site (Core10-acquired product line)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://api.getaccrue.com
+  role: >-
+    Live API host for the Accrue platform. Resolves in DNS to an AWS ELB
+    (k8s-prod-prodngin-*.us-east-1.elb.amazonaws.com) and is served by nginx, but every
+    discovery path returns a bare nginx 404 body (146 bytes) and no public documentation
+    anywhere links to it. The host is real; the contract is not public.
+  documents:
+  - {path: /, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery, run against every host above. No OpenAPI/Swagger, no GraphQL
+    surface, no MCP server and no A2A agent card was found. No a2a/ artifact is written,
+    per the search-only rule.
+  probes:
+  - {url: 'https://monarchfts.com/openapi.json', status: 404}
+  - {url: 'https://monarchfts.com/openapi.yaml', status: 404}
+  - {url: 'https://monarchfts.com/swagger.json', status: 404}
+  - {url: 'https://monarchfts.com/api-docs', status: 404}
+  - {url: 'https://monarchfts.com/docs', status: 404}
+  - {url: 'https://monarchfts.com/graphql', status: 404}
+  - {url: 'https://getaccrue.com/openapi.json', status: 404}
+  - {url: 'https://getaccrue.com/swagger.json', status: 404}
+  - {url: 'https://getaccrue.com/api-docs', status: 404}
+  - {url: 'https://getaccrue.com/docs', status: 404}
+  - {url: 'https://getaccrue.com/developers', status: 404}
+  - {url: 'https://getaccrue.com/api', status: 404}
+  - {url: 'https://api.getaccrue.com/openapi.json', status: 404}
+  - {url: 'https://api.getaccrue.com/openapi.yaml', status: 404}
+  - {url: 'https://api.getaccrue.com/swagger.json', status: 404}
+  - {url: 'https://api.getaccrue.com/v1/openapi.json', status: 404}
+  - {url: 'https://api.getaccrue.com/api-docs', status: 404}
+  - {url: 'https://api.getaccrue.com/docs', status: 404}
+  - {url: 'https://api.getaccrue.com/redoc', status: 404}
+  - {url: 'https://api.getaccrue.com/graphql', status: 404}
+  - {url: 'https://blog.core10.io/openapi.json', status: 404}
+  dns:
+    note: >-
+      Subdomain sweep for api/docs/developer/developers/sandbox/app/portal across core10.io,
+      monarchfts.com and getaccrue.com. Only one resolved.
+    resolved:
+    - {name: api.getaccrue.com, target: k8s-prod-prodngin-5a642dce7b-719096962.us-east-1.elb.amazonaws.com}
+    unresolved:
+    - core10.io and monarchfts.com have no api./docs./developer./developers./sandbox./app./portal. records
+    - getaccrue.com has no docs./developer./developers./sandbox./portal. records
+  github:
+    note: No Core10-lineage GitHub organization exists.
+    probes:
+    - {url: 'https://api.github.com/orgs/core10', status: 404}
+    - {url: 'https://api.github.com/orgs/core10io', status: 404}
+    - {url: 'https://api.github.com/orgs/monarchfts', status: 404}
+    - {url: 'https://api.github.com/orgs/accrue-technologies', status: 404}
+x-evidence:
+  fetched: '2026-08-11'
+  hosts_probed: 5
+  documents_found: 0

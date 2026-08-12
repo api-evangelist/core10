@@ -42,5 +42,23 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Core10 is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Core10, Inc. was a U.S.-based fintech software development and API integration firm founded in
+2016 by Lee Farabaugh and Jeff Martin in Franklin, Tennessee, with delivery centers in Martin,
+Tennessee and Huntington, West Virginia, built on a domestic-outsourcing model it trademarked
+as Hereshore(R). It wrote custom software, core-banking integrations and API layers for
+community banks, credit unions and fintechs, acquired Accrue Technologies in 2021, and spun
+its implementation practice out as Monarch in January 2024.
+
+**The Core10 brand is retired.** `core10.io` now 301-redirects to `monarchfts.com`, where the
+company trades as **Monarch**, an Intapp DealCloud implementation and managed-services
+consultancy for private capital firms. The **Accrue** platform trades independently at
+`getaccrue.com`.
+
+**No public API.** Core10 built API integrations for other companies for nearly a decade and
+never published a developer program, public API, SDK or machine-readable contract of its own.
+Neither successor brand does today. See `well-known/core10-well-known.yml` for the full probe
+record, and the `x-coverage` block in `apis.yml` for why this profile is thin.
+
+- https://monarchfts.com/ - Monarch (the company today)
+- https://getaccrue.com/ - Accrue (the product line)
+- https://blog.core10.io/ - Core10 Insights (archive)

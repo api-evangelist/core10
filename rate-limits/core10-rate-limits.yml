@@ -1,0 +1,22 @@
+generated: '2026-08-11'
+method: searched
+source: https://monarchfts.com/
+limit_count: 0
+note: >-
+  No rate limits are documented because no public API exists to limit. Core10 sold API
+  integration work; neither successor brand publishes a developer portal, an API reference or
+  a machine-readable contract. The single live API host in the lineage, api.getaccrue.com,
+  returns a bare nginx 404 on every unauthenticated path, so no rate-limit response headers
+  (X-RateLimit-*, RateLimit-*, Retry-After) could be observed either. Recorded as an honest
+  zero, not an omission.
+rate_limits: []
+headers_observed: []
+evidence:
+- {url: 'https://api.getaccrue.com/', status: 404, finding: 'bare nginx 404 body, no RateLimit-* or Retry-After headers'}
+- {url: 'https://getaccrue.com/developers', status: 404, finding: no developer portal to document limits
+    on}
+- {url: 'https://monarchfts.com/docs', status: 404, finding: no documentation site}
+x-evidence:
+  fetched: '2026-08-11'
+  documented_limits_found: 0
+  live_headers_observed: 0

@@ -1,17 +1,51 @@
 aid: core10
 name: Core10
-description: 'Core10 is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Core10, Inc. is a U.S.-based fintech software development and API integration
+  firm founded in 2016 by Lee Farabaugh and Jeff Martin, headquartered in Franklin, Tennessee
+  with delivery centers in Martin, Tennessee and Huntington, West Virginia, built on a
+  domestic-outsourcing model it trademarked as Hereshore(R). Core10 wrote custom software,
+  core-banking integrations and API layers for community banks, credit unions and fintechs,
+  and acquired Accrue Technologies in 2021 to add a Salesforce-based digital lending, account
+  opening and treasury onboarding platform. In January 2024 it spun its implementation
+  practice out as Monarch, and the Core10 brand has since been retired: core10.io now
+  301-redirects to monarchfts.com, where Monarch operates as an Intapp DealCloud
+  implementation, configuration and managed-services consultancy for private capital firms,
+  while the Accrue platform trades independently at getaccrue.com under its own leadership.
+  Core10 built API integrations for other companies for nearly a decade but never published a
+  developer program, public API, SDK or machine-readable contract of its own, and as of
+  2026-08-11 neither successor brand does either.'
+image: https://monarchfts.com/wp-content/uploads/cropped-monarch-favicon-192x192.webp
 url: https://raw.githubusercontent.com/api-evangelist/core10/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profile
+x-tier-reason: no-api-surface
+x-successor:
+- name: Monarch
+  url: https://monarchfts.com/
+  relationship: rebrand
+  note: core10.io 301-redirects here; Core10 co-founder Lee Farabaugh is Monarch CEO.
+- name: Accrue
+  url: https://getaccrue.com/
+  relationship: product-line
+  note: Accrue Technologies, acquired by Core10 in 2021, now trades under its own brand.
 specificationVersion: '0.20'
 created: '2026-08-11'
 modified: '2026-08-11'
 tags:
 - Company
+- Fintech
+- Financial Services
+- Banking
+- API Integration
+- Software Development
+- Digital Lending
+- Account Opening
+- Salesforce
+- Consulting
+- Professional Services
+- Private Capital
+- Tennessee
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +54,64 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://monarchfts.com/
+- type: About
+  url: https://monarchfts.com/about/
+- type: Contact
+  url: https://monarchfts.com/contact/
+- type: Careers
+  url: https://monarchfts.com/about#careers
+- type: Resources
+  url: https://monarchfts.com/resources/
+- type: Industries
+  url: https://monarchfts.com/industries/
+- type: TermsOfService
+  url: https://monarchfts.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://monarchfts.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/monarch-psg/
+- type: Blog
+  url: https://blog.core10.io/
+- type: BlogFeeds
+  url: https://blog.core10.io/rss.xml
+- type: Product
+  url: https://getaccrue.com/
+- type: DomainSecurity
+  url: security/core10-domain-security.yml
+- type: LLMsTxt
+  url: llms/core10-llms.txt
+- type: Plans
+  url: plans/core10-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/core10-rate-limits.yml
+x-enrichment:
+  date: '2026-08-11'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    The Core10 brand is retired — core10.io 301-redirects to monarchfts.com, where the company
+    now trades as Monarch, an Intapp DealCloud consultancy, while the Accrue platform it
+    acquired trades separately at getaccrue.com; Core10 sold API integration work for a decade
+    and never published an API, a developer portal or a spec of its own, and neither successor
+    does either.
+  evidence:
+  - url: https://core10.io/
+    status: 301
+  - url: https://monarchfts.com/openapi.json
+    status: 404
+  - url: https://monarchfts.com/llms.txt
+    status: 404
+  - url: https://monarchfts.com/.well-known/agent-card.json
+    status: 404
+  - url: https://getaccrue.com/developers
+    status: 404
+  - url: https://api.getaccrue.com/openapi.json
+    status: 404
+  - url: https://api.github.com/orgs/core10
+    status: 404
+  checked: '2026-08-11'

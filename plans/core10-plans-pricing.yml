@@ -1,0 +1,22 @@
+generated: '2026-08-11'
+method: searched
+source: https://monarchfts.com/
+plan_count: 0
+note: >-
+  Neither Core10 successor brand publishes pricing of any kind. Monarch (monarchfts.com) sells
+  Intapp DealCloud implementation, configuration, managed-services and selection engagements
+  and routes every service page to a "Talk to an Expert" contact form; there is no /pricing,
+  no /plans, no rate card and no published day rate. Accrue (getaccrue.com) sells its treasury
+  onboarding, account opening and lending platform to financial institutions and routes every
+  product page to "Book a Demo"; there is no /pricing page. Both are enterprise contact-sales
+  motions with zero published commercial terms — recorded as an honest zero, not an omission.
+plans: []
+evidence:
+- {url: 'https://monarchfts.com/', status: 200, finding: 'primary CTA is "Talk to an Expert"; no pricing in nav'}
+- {url: 'https://monarchfts.com/page-sitemap.xml', status: 200, finding: '35 pages, none named pricing or plans'}
+- {url: 'https://monarchfts.com/selection-services/', status: 200, finding: service page, no published price}
+- {url: 'https://getaccrue.com/', status: 200, finding: 'primary CTA is "Book a Demo"; no pricing in nav'}
+- {url: 'https://getaccrue.com/lending/', status: 200, finding: product page, no published price}
+x-evidence:
+  fetched: '2026-08-11'
+  pricing_pages_found: 0
