@@ -1,0 +1,18 @@
+{
+  "repo": "core10",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/company/monarch-psg/",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://blog.core10.io/",
+      "feed_url": "https://blog.core10.io/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-15T12:22:01Z"
+}
