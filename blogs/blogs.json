@@ -2,6 +2,13 @@
   "repo": "core10",
   "feeds": [
     {
+      "source": "https://blog.core10.io/rss.xml",
+      "feed_url": "https://blog.core10.io/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.linkedin.com/company/monarch-psg/",
       "error": "HTTPError"
     },
@@ -14,5 +21,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-15T12:22:01Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
